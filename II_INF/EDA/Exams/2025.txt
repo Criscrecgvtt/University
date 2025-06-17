@@ -1,0 +1,101 @@
+1.Cual es el coste temporal del MergeSort ?
+
+    n*log(n) para todos los casos 
+
+2.Sea LEGListaConPIPlus una clase con la siguiente cabecera:
+public class LEGListaConPIPlus<E extends Comparable<E>> extends LEGListaConPI<E>
+y tal que en la misma se ha sobrescrito el método insertar de forma que se cumpla siempre que los datos en la
+lista estén ordenados ascendentemente
+
+public boolean contiene(E e) {
+    this.inicio();
+    while (!this.inicio()){
+        E elem= this.recuperar();
+        int comp = elem.compareTo (e)
+        if (comp==0){return true;}
+        if (comp>0){return false;}
+        this.siguiente;
+    }
+    retrun false;
+}
+
+3
+
+3.1. Implementa un método estático que reciba:
+- Como primer argumento un Map cuyas claves son nombres de estudiantes (que son cadenas, String) y
+cuyos valores son objetos de una clase Estudiante (la cual se supone disponible, y que implementa la
+interfaz Comparable).
+- Y como siguientes argumentos dos cadenas (String) que corresponden a dos nombres de estudiantes
+(que podrían estar, o no, en el Map).
+Y que debe hacer lo siguiente:
+- Buscar los dos estudiantes indicados en sus argumentos 2º y 3º en el Map (que es su 1º argumento).
+- Si los encuentra, compararlos, y eliminar del Map al estudiante mayor, si lo hubiera.
+- Debe devolver el objeto Estudiante eliminado, o null en el caso de que ninguno fuera eliminado. 
+
+public static Estudiante eliminar EstudianteMayor(Map<String,Estudiante> m, String n1,String n2){
+
+    Estudiante e1 = m.recuperar(n1);
+    if (e1 == null){return null;}
+    Estudiante e2 = m.recuperar(n2);
+    if (e1 == null){return null;}
+    int comp = e1.compareTo(e2);
+    if (comp ==0){return null}
+    else{
+        if (comp>0){return m.eliminar(e1)}
+        else{
+           return m.eliminar(e1) 
+        }
+    }
+}
+
+3.2.. Estudia el coste temporal del método implementado, indicando la talla del
+problema en función de los argumentos de entrada al método, y el coste del algoritmo en notación asintótica. 
+
+La talla , n = m.talla();
+Y el coste del problema es constante, ya que las operaciones tiene valores constantes
+
+
+4.
+
+4.1. Implementación (3 puntos). Escribe un método (o métodos) tal que, dado un número entero positivo n,
+devuelva su raíz cuadrada entera.
+
+ public static int raizCuadradaEntera(int n) {
+ if (n == 0 || n == 1) return n;
+ return raizCuadradaEntera(n, 1, n); // Llamada recursiva inicial
+ }
+
+ private static int raizCuadradaEntera(int n, int izq, int der) {
+ // Caso base: devolvemos el mejor candidato encontrado
+
+ if (izq > der) return der;
+ int medio = izq + (der - izq) / 2;
+
+ long cuadrado = (long) medio * medio; // Evita desbordamiento
+
+ if (cuadrado == n) return medio; // Encontramos la raíz exacta
+ if (cuadrado < n) {
+ // Intentamos buscar un valor más grande
+ return raizCuadradaEntera(n, medio + 1, der);
+
+ } else {
+ // Buscamos en la mitad inferior
+ return raizCuadradaEntera(n, izq, medio - 1);
+ }
+ } 
+
+4.2.- Análisis (0,5 puntos). Estudia el coste temporal del método recursivo implementado.
+1. Talla del problema expresada en función de los argumentos de entrada al método.
+La talla del problema es n, el número entero dado como entrada.
+2. La(s) relación(es) de recurrencia que expresa(n) el coste, indicando, si hay coste mejor y peor, en qué caso se
+da cada uno. Además, indica el teorema que resuelve la recurrencia, e identifica los valores de sus
+parámetros.
+Hay instancias significativas.
+El caso mejor ocurre si n es un cuadrado perfecto de un número pequeño. Caso mejor: Tm(n)  (1)
+El caso peor se da cuando se necesitan realizar el máximo número de llamadas hasta reducir el espacio de búsqueda
+a un único valor.
+Recurrencia caso peor: Tp(n)=Tp(n/2)+k.
+Aplicando el teorema 3 con a=1 y c=2, Tp(n) (log n)
+3. Expresa el coste del algoritmo en notación asintótica.
+T(n) ∈ Ω(1)
+T(n) ∈ O(log n)
