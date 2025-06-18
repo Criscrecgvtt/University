@@ -1,0 +1,83 @@
+1. Implementa un método estático llamado verificarParentesis tal que:
+- Reciba una secuencia de caracteres de tipo Character almacenados en una ListaConPI que
+representa una expresión matemática que puede contener paréntesis.
+- Debe comprobar si los paréntesis de la secuencia están correctamente balanceados.
+- Devuelve true si los paréntesis están balanceados (o si no hay paréntesis). En caso contrario,
+devuelve false. 
+
+public static boolean verificarParentesis(ListaConPI<Character> secuencia){
+
+    int abiertos =0;
+    secuencia.inicio();
+    while(!secuencia.esFin()){
+
+        Character comprob = secuencia.recuperar();
+        if (comprob == '(' ){
+            abiertos++;
+        }
+        if (comprob == ')'){
+            abiertos--;
+            if (abiertos<0){
+                return false \\ no hace falta, pero asi cortas antes pq sabes q no puede haber uno de ) antes q uno de ( y 
+            }
+        }
+
+        secuencia.next()
+
+    }
+
+return abiertos ==0;
+}
+
+3. Sea una aplicación de gestión comercial de una cadena de tiendas, en la que su catálogo de productos a la venta se representa mediante un
+Map<Producto,Double>, siendo Producto (una clase que modela los productos a la venta), la clave del Map,
+y el valor del Map un número real que representa el precio de cada producto.
+
+3.1.- Implementación (3 puntos). Implementa un método estático cuyo perfil sea:
+public static Map<Producto,Double> actualizar(Map<Producto,Double> mapCatalogo,
+Map<Producto,Double> mapNuevosPrecios)
+Donde:
+    - El 1º argumento, mapCatalogo, es el Map de todos los productos a la venta con sus precios actuales.
+    - El 2º argumento, mapNuevosPrecios, es un Map con los productos que cambiarán de precios (los
+nuevos precios se van a aplicar en fecha próxima). Todos los productos o parte de los productos
+pueden tener nuevos precios en este Map. Es decir, las claves de mapNuevosPrecios son las
+mismas que las claves de mapCatalogo o son un subconjunto de las claves de mapCatalogo.
+El método debe realizar las siguientes acciones:
+- Todos los nuevos precios de productos en mapNuevosPrecios deben aplicarse en mapCatalogo. Al
+final de la ejecución los productos en mapCatalogo deben tener como valores los nuevos precios.
+- Aquellos productos que no tengan nuevo precio (i.e. no estén en mapNuevosPrecios) mantendrán
+su precio en mapCatalogo.
+-  Además, se considera que los productos cuyo precio se ha rebajado en, al menos, un 70% son
+productos en liquidación. Y el tratamiento de estos productos es diferente.
+- Se generará un nuevo Map, mapLiquidaciones, con las entradas <Producto,Double>
+correspondientes a productos en liquidación. Estos productos, además, ya no serán parte de
+mapCatalogo (i.e., deberán borrarse de mapCatalogo).
+- Se estima que el tamaño de mapLiquidaciones será un 30% del tamaño de mapCatalogo.
+- El método devolverá mapLiquidaciones. 
+
+public static map<Producto,Double> actualizar ((Map<Producto,Double> mapCatalogo, Map<Producto,Double> mapNuevosPrecios))
+{
+    int t = mapCatalogo.talla()*0,3
+  Map<Producto,Double>  mapLiquidaciones = new TablaHash<>(t);
+  //Iteramos por las claves de los productos queremos cambiar
+  //Y comparamos con el mapCatalogo y ahi hacemos los if
+  ListaConPI<Producto> l = mapNuevosPrecios.claves();
+
+  for (l.inicio();!l.esFin();l.siguiente()){
+    Producto producto = l.recuperar();
+    Double nuevoPrecio = mapNuevosPrecios.recuperar(producto)
+    if (nuevoPrecio !=null){
+        Double precio = mapCatalogo.recuperar(producto);
+        mapCatalogo.insertar(producto,mapNuevosPrecios)
+    }
+    if (nuevoPrecio < 0.30 * precio){
+        mapLiquidaciones.insertar(producto, nuevoPrecio);
+        mapCatalogo.eliminar(producto); 
+    }
+  }
+
+  return mapLiquidaciones;
+}
+
+
+
