@@ -1,0 +1,74 @@
+1.Sean l1 y l2 dos ListaConPI genéricas sin elementos repetidos y ordenadas ascendentemente. Se
+cumple, además, que ningún elemento de una lista está en la otra lista.
+Diseña un método estático tal que, dadas esas dos listas l1 y l2, inserte los elementos de l2 en la lista l1,
+manteniendo la ordenación. Además, al final del proceso, la lista l2 debe quedar vacía. El coste del algoritmo
+debe ser lineal,
+
+public static <E extends Comparable<E>> void m1(ListaConPI<E> l1, ListaConPI<E> l2) {
+
+l1.inicio();
+l2.inicio();
+
+while(!l1.esFin()&& !l2.esFin()){
+    E e2= l2.recuperar();
+    if (e2.compareTo(l1.recuperar())>=0)
+         l1.insertar(e2);
+         l2.eliminar();
+    else{
+        l1.next()
+    }
+}
+if (!l2.esFin()){
+     E e2= l2.recuperar();
+    while(!l2.esFin()){
+        l1.insertar(e2);
+         l2.eliminar();
+
+    }
+}
+
+}
+
+4.- (3,5 puntos: desglosado como se indica en apartados). Una empresa quiere conocer de forma eficiente las
+horas extra que han realizado sus empleados/as en un periodo determinado (su jornada laboral habitual debería
+ser de 8 horas). Para ello, utiliza un sistema de fichajes que guarda en una ListaConPI<Fichaje> los fichajes de
+todos sus empleados (asumimos que usa una lista diferente cada año y que, al final de cada día, el sistema
+registra el fichaje de cada uno/a de sus empleados/as). A continuación, se describe la clase Fichaje:
+ public class Fichaje {
+ public String getID() {...}; // devuelve el NIF o NIE del/la empleado/a, con números y letras
+ public Integer getDia() {...}; // devuelve el día. Por simplicidad, asumimos que cada día
+ // del año se codifica con un número entero en el rango [1, 366]
+ public Integer getHoras() {...}; // devuelve las horas. Por simplicidad, asumimos que las horas
+ // diarias trabajadas se computan sin fracciones, en un número entero
+ ... }
+4.1. Implementación (3 puntos). Se pide implementar un método estático tal que:
+ Reciba 3 argumentos: una ListaConPI<Fichaje> de fichajes, un dia_inicial del periodo y un dia_final
+(con precondición dia_final >= dia_inicial, ambos inclusive y representados por su código numérico).
+ Devuelva el empleado/a (identificado/a por su ID) que ha realizado más horas extra.
+ El método debe ser eficiente (pista: usar un Map como EDA auxiliar).
+Además, para su implementación asumimos que:
+ El método se implementa en una clase que le da acceso a los modelos y estructuras de datos vistos en la asignatura.
+ La ListaConPI de fichajes está correctamente creada y no contiene objetos con datos nulos.
+ El resultado es único (es decir, existe un único empleado/a que es quien ha realizado más horas extra). 
+
+public static String horasExtra(ListaConPI<Fichaje> lista, Integer dia_i, Integer dia_f) {
+ Map<String, Integer> m = new TablaHash<String, Integer>(lista.talla());
+ int masHoras=0;
+ string idMas;
+ while(!lista.esFin()){
+    Integer dia = lista.recuperar().getDia();
+    Integer horas = lista.recuperar().getHoras();
+    if (dia >= dia_i && dia <= dia_f && horas > 8) {
+       String emp = lista.recuperar().getID();
+        Integer extras = m.recuperar(emp);
+        if (extras != null) m.insertar(emp, extras + (horas - 8));
+        else m.insertar(emp, horas - 8);
+        if (m.recuperar(emp) > masExtras) {
+        masExtras = m.recuperar(emp);
+        empMax = emp;
+        }
+    }
+    lista.siguiente();
+ }
+ return empMax;
+}
