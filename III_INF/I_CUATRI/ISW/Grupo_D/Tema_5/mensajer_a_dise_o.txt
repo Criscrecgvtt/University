@@ -1,0 +1,140 @@
+    public class UsuarioBasico
+    {
+	private string email;
+	
+	public UsuarioBasico(string email)
+	{
+	   this.email = email;
+	}
+    }
+
+    public class UsuarioValidado : UsuarioBasico
+    {
+        private string nombre;
+        private string numeroTelefono;
+        // colocar esFavorito aquí sería un ERROR
+        private List<Contacto> redContactos;
+        private List<Cuenta> cuentas;
+
+        public UsuarioValidado(string email, string nombre, string numeroTelef) : base(email)
+        {
+            this.nombre = nombre;
+            this.numeroTelefono = numeroTelef;
+            this.redContactos = new List<Contacto>();
+            this.cuentas = new List<Cuenta>(); // relajo
+        }
+
+        public void AddContacto(Contacto contacto)
+        {
+            this.redContactos.Add(contacto);
+        }
+
+        public void AddCuenta(Cuenta cuenta)
+        {
+            this.cuentas.Add(cuenta);
+        }
+
+    }
+
+    public class Contacto
+    {
+        private string nombre;
+
+        private UsuarioValidado usuarioRedContactos;
+        private bool esFavorito;
+        private List<ConectadoA> conectadosA;
+
+        public Contacto(string nombre, UsuarioValidado contacto, bool favorito)
+        {
+            this.nombre = nombre;
+            this.usuarioRedContactos = contacto;
+            this.esFavorito = favorito;
+            this.conectadosA = new List<ConectadoA>();
+        }
+
+        public void AddContactoA(ConectadoA conectadoA)
+        {
+            this.conectadosA.Add(conectadoA);
+        }
+    }
+
+
+    public class ConectadoA
+    {
+        private Contacto conectadoAContacto;
+        private AplicacionMensajeria conectadoAAplicacion;
+        private string cuentaUsuario;
+
+        public ConectadoA(Contacto contacto, AplicacionMensajeria aplicacion, string cuenta)
+        {
+            this.conectadoAContacto = contacto;
+            this.conectadoAAplicacion = aplicacion;
+            this.cuentaUsuario = cuenta;
+        }
+
+    }
+
+    public class AplicacionMensajeria
+    {
+       private string nombre;
+       private string descripcion;
+       private string URLAPI;
+       private List<ConectadoA> conectadosA;
+       private List<Cuenta> cuentas;
+
+       public AplicacionMensajeria(string nombre, string desc, string URL)
+       {
+           this.nombre = nombre;
+           this.descripcion = desc;
+           this.URLAPI = URL;
+           this.conectadosA = new List<ConectadoA>();
+           this.cuentas = new List<Cuenta>();
+       }
+
+       public void AddConectadosA(ConectadoA conectadoA)
+       {
+           this.conectadosA.Add(conectadoA);
+       }
+
+       public void AddCuentas(Cuenta cuen)
+       {
+           this.cuentas.Add(cuen);
+       }
+   }
+
+   public class Cuenta
+   {
+       private string cuentaUsuario;
+       private string contraseña;
+       private DateTime fechaAlta;
+       private UsuarioValidado usuarioValidado;
+       private AplicacionMensajeria aplicacionMensajeria;
+
+       public Cuenta(string cuenta, string cont, DateTime fecha, UsuarioValidado usuario, AplicacionMensajeria aplicacion)
+       {
+           this.cuentaUsuario = cuenta;
+           this.contraseña = cont;
+           this.fechaAlta = fecha;
+           this.usuarioValidado = usuario;
+           this.aplicacionMensajeria = aplicacion;
+       }
+   }
+
+   class Program
+   {
+	static void Main(string[] args)
+        {
+            UsuarioValidado userVal = new UsuarioValidado("geibsan@gmail.com", "Gema IS", "555123123");
+            Contacto contacto = new Contacto("Gema Ibanez-Sanchez", userVal, true);
+
+            AplicacionMensajeria appMensa = new AplicacionMensajeria("Whatsapp", "Whatsapp", "www.whatsapp.com");
+            Cuenta cuen = new Cuenta("12345678901234567890", "1234", new DateTime(2024, 03, 26, 0, 0, 0), userVal, appMensa);
+            userVal.AddCuenta(cuen);
+            userVal.AddContacto(contacto);
+            appMensa.AddCuentas(cuen);
+
+            ConectadoA conectadoA = new ConectadoA(contacto, appMensa, "geibsan");
+            appMensa.AddConectadosA(conectadoA);
+            contacto.AddContactoA(conectadoA);
+    	}
+   }
