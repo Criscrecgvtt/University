@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>servAsincronico - SAD 2023 Seminarios</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "servAsincronico";
+        var mkdocs_page_input_path = "servAsincronico.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> SAD 2023 Seminarios
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Contenido</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="servEscalables.html">Servidores escalables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="patrones.html">Patrones de diseño</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="node.html">JS + NodeJS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="js.html">Despliegue</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="0mq.html">NATS</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Seminarios</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="index.html"> 0.- Presentación y herramientas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario1.html"> 1.- Servidores Escalables y Patrones de Diseño</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario2.html"> 2.- JS+Node: bucle eventos, REPL, funciones y clausuras</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario3.html"> 3.- JS+Node: tipos de datos, arrays y objetos, JSON, ámbito y contexto de ejecución</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario4.html"> 4.- JS+Node: asincronía, callbacks, promesas, funciones asincrónicas, temporización</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario5.html"> 5.- JS+Node: módulos e importación, bibliotecas básicas de NodeJS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario6.html"> 6.- Ejercicio evaluable 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario7.html"> 7.- Despliegue: contenedores e imágenes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario8.html"> 8.- Despliegue: docker y docker-compose, escenarios de despliegue</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario9.html"> 9.- NATS: introducción</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario10.html">10.- NATS: patrones publicación/suscripción y petición/respuesta</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario11.html">11.- NATS: stream processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario12.html">12.- NATS: seguridad (autenticación, autorización)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario13.html">13.- NATS: ejemplos completos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario14.html">14.- Conclusiones. Ejercicio evaluable 2</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SAD 2023 Seminarios</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>servAsincronico</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="servidor-asincronico">Servidor Asincrónico</h2>
+<ul>
+<li>Dirigido por eventos. (nodeJS, Async .NET)</li>
+<li>Programa = conjunto de acciones para responder a diferentes tipos de eventos</li>
+<li>La llegada de un evento activa las acciones asociadas<ul>
+<li>Si no estamos ejecutando otra cosa, ejecutamos la acción</li>
+<li>Si estamos ejecutando otra cosa, guardamos la acción en una cola</li>
+<li>Cola de eventos = acciones activadas pero pendientes de ejecución</li>
+</ul>
+</li>
+<li>múltiples actividades, pero no acceden de forma concurrente al estado compartido<ul>
+<li>Ventaja.- No hay estado compartido: $\downarrow$ complejidad $\uparrow$ escala mejor</li>
+<li>Ventaja.- Modelo más próximo a la forma real de trabajo $\rightarrow$ dirigido por eventos</li>
+<li>facilita el razonamiento sobre la corrección del código</li>
+<li>Inconveniente.- El orden de activación (orden en cola de eventos) puede ser importante</li>
+<li>Necesita una gestión adecuada del estado al implantar las acciones</li>
+<li>Inconveniente.- Todo el entorno debe ser asincrónico</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="ejemplo-servidor-echo-servidor-asincronico-en-nodejs">Ejemplo: servidor Echo (Servidor Asincrónico en NodeJS)</h3>
+<pre><code class="language-js">// fichero echoServer.js
+const net = require('net')
+let server = net.createServer(onClientConnected) // Create Server instance 
+server.listen(8080, 'localhost', () =&gt; {console.log(`server listening on ${server.address()}`)})
+
+function onClientConnected(client) {  
+    let remoteAddress = `${client.remoteAddress}:${client.remotePort}`
+    console.log(`new client connected: ${remoteAddress}`)
+
+    client.on('data', (data) =&gt; {
+        console.log(`${remoteAddress} Recv: ${data}`)
+        client.write(`Echo: ${data}`)
+    })
+    client.on('close', ()    =&gt; {console.log(`connection from ${remoteAddress} closed`)})
+    client.on('error', (err) =&gt; {console.log(`Connection ${remoteAddress} error: ${err.message}`)})
+}
+</code></pre>
+<pre><code class="language-js">// fichero echoClient.js
+var net = require('net')
+var nick = process.argv[2] || 'client' // accede a argumento en linea de órdenes:  en process.argv tenemos ['node', 'echoClient', 'idCliente'] 
+var client = net.connect({port: 8080}, function() {console.log(nick+' connected to server!')})
+
+process.stdin.resume(); process.stdin.setEncoding('utf8')  // inicializa entrada estardrd (teclado)
+
+    // acciones asociadas a eventos de teclado
+process.stdin.on('data', (str)=&gt; {client.write(nick+': '+str)})
+process.stdin.on( 'end', ()   =&gt; {client.write('connection closed')})
+
+    // acciones asociadas al canal de comunicación con el servidor
+client.on('data', (str)=&gt; {console.log(str.toString())})
+client.on( 'end', ()   =&gt; {console.log('disconnected from server')})
+</code></pre>
+<hr />
+<h2 id="servidores-asincronicos-cuestiones">Servidores asincrónicos.- Cuestiones</h2>
+<ol>
+<li>El ejemplo de servidor asincrónico no tiene bucles. ¿Cuando acaba el programa?</li>
+<li>El servidor asincrónico dispone solo de un hilo. ¿Qué pasa si mientras ejecuta código llega un evento?</li>
+</ol>
+<h2 id="servidor-asincronico-ejercicio">Servidor asincrónico.- Ejercicio</h2>
+<p>Lanza en terminales distintos las siguientes órdenes</p>
+<ul>
+<li>node echoServer</li>
+<li>node echoClient A</li>
+<li>node echoClient B</li>
+</ul>
+<p>Responde a las siguientes cuestiones:</p>
+<ul>
+<li>Indica si el servidor puede atender simultáneamente a más de un cliente (atender a un segundo cliente cuando todavía no ha terminado el primero). ¿Cómo se asocia cada respuesta al cliente correcto?</li>
+<li>Cada vez que escribas un texto en el terminal del cliente dicho texto debe llegar al servidor y contestar a ese cliente. Compruébalo</li>
+<li>¿Qué pasa cuando el primer cliente termina con control-C? ¿Y si también finaliza el segundo?. Indica cómo afecta todo eso al servidor</li>
+<li>control-C permite abortar la ejecución, pero control-D (en Linux) permite cerrar la salida estandard. ¿Qué pasa con los clientes y el servidor si en los clientes se usa control-D en lugar de control-C?</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

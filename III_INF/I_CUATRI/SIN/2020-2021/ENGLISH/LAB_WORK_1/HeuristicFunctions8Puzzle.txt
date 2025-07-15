@@ -1,0 +1,23 @@
+h1: Number of misplaced tiles
+
+h2: Sum of Eucledian distances of the tiles from their goal positions
+
+h3: Sum of Manhattan distances of the tiles from their goal positions
+
+h4: Number of tiles out of row + Number of tiles out of column
+
+h5: n-Max Swap
+Assume you can swap any tile with the ‘space’. Use the cost of the
+optimal solution to this problem as a heuristic for the 8-puzzle.
+
+h6: n-Swap
+Represent the ‘space’ as a tile and assume you can swap any two tiles.
+Use the cost of the optimal solution to this problem as a heuristic
+for the 8-puzzle.
+
+h7: Nilsson’s Sequence Score h(n) = P(n) + 3 S(n)
+P(n): Sum of Manhattan distances of each tile from its proper position
+S(n): A sequence score obtained by checking around the non-central
+squares in turn, allotting 2 for every tile not followed by its proper
+successor and 0 for every other tile, except that a piece in the
+center scores 1

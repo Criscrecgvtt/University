@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>servConcurrente - SAD 2023 Seminarios</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "servConcurrente";
+        var mkdocs_page_input_path = "servConcurrente.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> SAD 2023 Seminarios
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Contenido</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="servEscalables.html">Servidores escalables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="patrones.html">Patrones de diseño</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="node.html">JS + NodeJS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="js.html">Despliegue</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="0mq.html">NATS</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Seminarios</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="index.html"> 0.- Presentación y herramientas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario1.html"> 1.- Servidores Escalables y Patrones de Diseño</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario2.html"> 2.- JS+Node: bucle eventos, REPL, funciones y clausuras</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario3.html"> 3.- JS+Node: tipos de datos, arrays y objetos, JSON, ámbito y contexto de ejecución</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario4.html"> 4.- JS+Node: asincronía, callbacks, promesas, funciones asincrónicas, temporización</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario5.html"> 5.- JS+Node: módulos e importación, bibliotecas básicas de NodeJS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario6.html"> 6.- Ejercicio evaluable 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario7.html"> 7.- Despliegue: contenedores e imágenes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario8.html"> 8.- Despliegue: docker y docker-compose, escenarios de despliegue</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario9.html"> 9.- NATS: introducción</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario10.html">10.- NATS: patrones publicación/suscripción y petición/respuesta</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario11.html">11.- NATS: stream processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario12.html">12.- NATS: seguridad (autenticación, autorización)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario13.html">13.- NATS: ejemplos completos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="seminario14.html">14.- Conclusiones. Ejercicio evaluable 2</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SAD 2023 Seminarios</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>servConcurrente</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="servidor-concurrente-multi-hilo">Servidor concurrente (multi-hilo)</h2>
+<ul>
+<li>Múltiples hilos de ejecución (threads) que se ejecutan de forma solapada en el tiempo</li>
+<li>Cada petición es atendida por un hilo diferente</li>
+<li>Ventaja.- cada hilo se planifica por separado (si se suspende no afecta al resto del servidor)</li>
+<li>Estado compartido. Todos los hilos comparten un estado global</li>
+<li>Requiere mecanismos de control de concurrencia para garantizar atomicidad<ul>
+<li>Todos los hilos comparten un estado global</li>
+<li>Hay que evitar interferencias e interbloqueos</li>
+<li>Inconveniente.- control concurrencia -&gt; suspensión. Sobrecarga</li>
+<li>Inconveniente.- programación y depuración complejas</li>
+</ul>
+</li>
+<li>Usado en Java y .NET</li>
+</ul>
+<hr />
+<h3 id="ejemplo-servidor-echo-servidor-concurrente-en-java">Ejemplo: servidor Echo (Servidor concurrente en Java)</h3>
+<pre><code class="language-java">import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class EchoServer {
+    public static void main(String args[]){
+        ServerSocket server = null;
+        Socket client  = null;
+        try{
+            server  = new ServerSocket(9999);
+            while(true){
+                System.out.println (&quot;server listening on ..&quot;);
+                client = server.accept();
+                System.out.println(&quot;new client connected&quot;);
+                new ClientHandler(client).start();
+            }
+        } catch(Exception e) { System.out.println(e); }
+    }
+}
+
+class ClientHandler extends Thread {
+    private Socket client = null;
+    public ClientHandler(Socket client) {this.client = client;}
+
+    public void run(){
+        String buf = null;
+        BufferedReader in = null;
+        PrintStream out  = null;
+        try{
+            in = new BufferedReader(new InputStreamReader(this.client.getInputStream()));
+            out = new PrintStream(this.client.getOutputStream());
+            while(true){
+                buf = in.readLine();
+                System.out.println(&quot;Recv: &quot;+buf);
+                out.println(&quot;Echo: &quot; + buf);
+            }
+            System.out.println(&quot;connection from client closed&quot;);
+            this.client.close();
+        } catch (Exception e){ System.out.println(e); }
+    }
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Recordant els modes d'enviament i recepció</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<h1 id="recordant-els-modes-denviament-i-recepció">Recordant els modes d’enviament i recepció</h1>
+<ol type="1">
+<li><p>Siga una operació d’enviament <code>send(x,...)</code>. Si quan la funció <code>send</code> acaba, es pot modificar <code>x</code> sense que afecte a l’enviament, es tracta d’un enviament:</p>
+<ol type="a">
+<li>síncron.</li>
+<li>amb buffer.</li>
+<li>bloquejant.</li>
+<li>no bloquejant.</li>
+</ol></li>
+<li><p>Siga una operació d’enviament <code>send(x,...)</code>. Si quan la funció <code>send</code> acaba, sabem que <code>x</code> ha arribat al procés destinatari, es tracta d’un enviament (poden haver múltiples respostes correctes):</p>
+<ol type="a">
+<li>síncron.</li>
+<li>amb buffer.</li>
+<li>bloquejant.</li>
+<li>no bloquejant.</li>
+</ol></li>
+<li><p>Siga una operació de recepció <code>recv(x,...)</code>. Si quan la funció <code>recv</code> acaba, sabem que <code>x</code> conté les dades rebudes, es tracta d’una recepcíó.</p>
+<ol type="a">
+<li>síncrona.</li>
+<li>amb buffer.</li>
+<li>bloquejant.</li>
+<li>no bloquejant.</li>
+</ol></li>
+<li><p>La funció MPI_Send fa un enviament (poden haver múltiples respostes correctes):</p>
+<ol type="a">
+<li>síncron.</li>
+<li>amb buffer.</li>
+<li>pot ser síncron o amb buffer.</li>
+<li>bloquejant.</li>
+</ol></li>
+</ol>
+</body>
+</html>
